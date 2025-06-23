@@ -1,8 +1,10 @@
 'use client';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
+
 import { usePathname } from 'next/navigation';
-import React from 'react';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { ModeToggle } from './mode-toggle';
+
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -17,11 +19,12 @@ const NavItems = () => {
         <Link
           key={item.name}
           href={item.href}
-          className= {cn(pathname === item.href && 'text-primary font-semibold' )}
+          className={cn(pathname === item.href && 'text-primary font-semibold')}
         >
           {item.name}
         </Link>
       ))}
+      <ModeToggle />
     </nav>
   );
 };

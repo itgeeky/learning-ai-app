@@ -1,16 +1,25 @@
-import { Button } from '@/components/ui/button';
-import React from 'react';
+import CompanionCard from '@/components/companion-card';
+import CompanionList from '@/components/companions-list';
+import Cta from '@/components/cta';
 
 const Page = () => {
   return (
-    <div className='flex h-screen items-center justify-center'>
-      <div className='flex flex-col items-center justify-center'>
-        <h1 className='text-3xl font-bold underline text-muted-foreground'>
-          Hello world!
-        </h1>
-        <Button>Este es un boton</Button>
-      </div>
-    </div>
+    <main className=''>
+      <h1 className='text-2xl'>Popular companions</h1>
+      <section className='home-section'>
+        <CompanionCard 
+        id='123'
+        topic='Neural Networks'
+        name='Neura the brainy explorer'
+        subject='Science'
+        duration={45}
+        color='#ffda6e'/>
+      </section>
+      <section className='home-section'>
+        <CompanionList />
+        <Cta />
+      </section>
+    </main>
   );
 };
 
